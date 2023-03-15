@@ -1,0 +1,15 @@
+.Letter{
+  background-image: url(./background1.jpeg);
+  width: 700px;
+  height: 800px;
+  background-size: 100% 100%;
+  /* padding-left: 100px; */
+  margin: 30px auto 30px auto
+}
+
+
+.LetterText{
+  width: 470px;
+  height: 500px;
+  margin: 140px 120px
+}
