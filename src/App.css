@@ -49,7 +49,7 @@ body{
   margin: 150px 100px;
   border: 1px solid #ccc;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 25px;
   color: #333;
 }
 .LetterText:focus{
@@ -75,18 +75,6 @@ body{
 
   font-family: "Nanum Pen Script";
 }
-.MyButton_default{
-  background-color: #ececec;
-  color: black;
-}
-.MyButton_positive{
-  background-color: #64C964;
-  color: white;
-}
-.MyButton_negative{
-  background-color: #fd565f;
-  color: white;
-}
 
 /* HEADER */
 header{
@@ -108,6 +96,7 @@ header .head_text{
 header .head_btn_left{
   width: 25%;
 }
+
 header .head_btn_right{
   width: 25%;
   justify-content: end;
@@ -124,4 +113,53 @@ header button{
 .Home div{
   font-size: 40px;
   margin: 80px;
+}
+
+.button{
+  background-color: transparent;
+  border: 2px solid gainsboro;
+  border-radius: 10px;
+
+  cursor: pointer;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  margin: 20px;
+  font-size: 18px;
+  
+  white-space: nowrap;
+
+  font-family: "Nanum Pen Script";
+}
+
+/* Certification */
+.Certification{
+  text-align: center;
+  margin: 160px;
+}
+
+.Certification_button{
+  margin: 15px;
+  display: flex;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.Certification_button button{
+  width: 90px;
+  margin-left: 8px;
+}
+
+.Certification_button input{
+  width: 180px;
 }
