@@ -163,3 +163,37 @@ header button{
 .Certification_button input{
   width: 180px;
 }
+
+/* CheeringMessage */
+.CheeringMessage{
+  border-bottom: 1px solid gray;
+  text-align: center;
+  padding:20px;
+}
+.CheeringMessage input, textarea{
+  margin-bottom: 20px;
+  width: 400px;
+  padding: 10px;
+}
+.CheeringMessage textarea{
+  height: 80px;
+}
+.CheeringMessage input{
+  margin-top: 20px;
+}
+.CheeringMessage button{
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  font-size: 18px;
+  
+  white-space: nowrap;
+
+  font-family: "Nanum Pen Script";
+}
