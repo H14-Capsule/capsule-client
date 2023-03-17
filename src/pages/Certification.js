@@ -18,6 +18,10 @@ const Certification = () => {
     <>
       <MyHeader
         headText={"이메일 인증"}
+        rightChild={
+          <Link to="/CheeringMessage">
+            <MyButton text={'응원글 쓰러 가기'} onClick={() => { }} />
+          </Link>}
       />
       <div className="Certification">
         <div className="Certification_button">

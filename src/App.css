@@ -167,16 +167,21 @@ header button{
 /* CheeringMessage */
 .CheeringMessage{
   border-bottom: 1px solid gray;
-  text-align: center;
+  /* text-align: center; */
   padding:20px;
+  font-size: 20px;
 }
 .CheeringMessage input, textarea{
   margin-bottom: 20px;
   width: 400px;
   padding: 10px;
+  margin: 0px auto;
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
 }
 .CheeringMessage textarea{
-  height: 80px;
+  height: 60px;
+  margin: 20px 0px;
 }
 .CheeringMessage input{
   margin-top: 20px;
@@ -196,4 +201,20 @@ header button{
   white-space: nowrap;
 
   font-family: "Nanum Pen Script";
+}
+.CheeringMessageContent{
+  display: flex;
+  align-items : center;
+}
+.CheeringMessageAuthor{
+  display: flex;
+  align-items : center;
+}
+
+.CheeringMessageDiv{
+/* background-color: green; */
+display : flex;
+justify-content : center;
+flex-direction : column;
+align-items: center;
 }

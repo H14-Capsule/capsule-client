@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
 
-const CheeringMessage = () => {
+const CheeringMessage = ({ onCreate }) => {
+
+  const authorInput = useRef()
+  const contentInput = useRef()
+
 
   const [state, setState] = useState({
     author: "",
@@ -18,8 +22,21 @@ const CheeringMessage = () => {
   }
 
   const handleSubmit = () => {
-    console.log(state)
-    alert("저장 성공!")
+    if (state.author.length < 1) {
+      authorInput.current.focus();
+      return;
+    }
+    if (state.content.length < 3) {
+      contentInput.current.focus();
+      return;
+    }
+    onCreate(state.author, state.content)
+    alert("저장성공!")
+
+    setState({
+      author: "",
+      content: ""
+    })
   }
 
   return (
@@ -31,22 +48,30 @@ const CheeringMessage = () => {
             <MyButton text={'뒤로가기'} onClick={() => { }} />
           </Link>}
       />
-      <div>
-        <input
-          name="author"
-          value={state.author}
-          onChange={handleChangeState} />
+      <div className="CheeringMessageDiv">
+        <div className="CheeringMessageAuthor">
+          작성자
+          <input
+            ref={authorInput}
+            name="author"
+            value={state.author}
+            onChange={handleChangeState} />
+        </div>
+        <div className="CheeringMessageContent">
+          내 용
+          <textarea
+            ref={contentInput}
+            name="content"
+            value={state.content}
+            onChange={handleChangeState} />
+        </div>
       </div>
       <div>
-        <textarea
-          name="content"
-          value={state.content}
-          onChange={handleChangeState} />
-      </div>
-      <div>
-        <button onClick={handleSubmit}>응원글 저장하기</button>
+        <button onClick={handleSubmit}>응원글 저장하기
+        </button>
       </div>
     </div>
+
   )
 }
 
