@@ -70,7 +70,7 @@ body{
   padding-right: 20px;
 
   font-size: 18px;
-  
+  background-color: #FFF0F0;
   white-space: nowrap;
 
   font-family: "Nanum Pen Script";
@@ -95,6 +95,7 @@ header .head_text{
 
 header .head_btn_left{
   width: 25%;
+
 }
 
 header .head_btn_right{
@@ -171,26 +172,46 @@ header button{
   padding:20px;
   font-size: 20px;
 }
-.CheeringMessage input, textarea{
-  margin-bottom: 20px;
-  width: 400px;
-  padding: 10px;
-  margin: 0px auto;
-  font-family: "Nanum Pen Script";
-  font-size: 20px;
+
+.CheeringMessageDiv{
+  padding : 50px;
 }
-.CheeringMessage textarea{
-  height: 60px;
-  margin: 20px 0px;
+
+.CheeringMessageDiv input, textarea {
+  width : 100%;
+  padding:20px;
+  border : 1px solid gray;
+  border-radius: 5px;
+  resize: none;
 }
-.CheeringMessage input{
-  margin-top: 20px;
+
+
+.CheeringMessageAuthor,
+.CheeringMessageContent {
+  display: flex;
+  align-items: center;
 }
+
+.CheeringMessageAuthor {
+  margin-bottom: 30px;
+}
+
+label {
+  flex-shrink: 0;
+  display: block;
+  width: 50px;
+  text-align: center;
+  margin-right : 10px;
+}
+
+
 .CheeringMessage button{
+  display: block;
+  margin : 0 auto;
   cursor: pointer;
   border: none;
   border-radius: 5px;
-
+  background-color: #FFF0F0;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
@@ -202,19 +223,5 @@ header button{
 
   font-family: "Nanum Pen Script";
 }
-.CheeringMessageContent{
-  display: flex;
-  align-items : center;
-}
-.CheeringMessageAuthor{
-  display: flex;
-  align-items : center;
-}
 
-.CheeringMessageDiv{
-/* background-color: green; */
-display : flex;
-justify-content : center;
-flex-direction : column;
-align-items: center;
-}
+

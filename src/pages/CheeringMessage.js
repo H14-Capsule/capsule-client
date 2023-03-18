@@ -50,26 +50,26 @@ const CheeringMessage = ({ onCreate }) => {
       />
       <div className="CheeringMessageDiv">
         <div className="CheeringMessageAuthor">
-          작성자
+          <label htmlFor="author">작성자</label>
           <input
+            id='author'
             ref={authorInput}
             name="author"
             value={state.author}
             onChange={handleChangeState} />
         </div>
         <div className="CheeringMessageContent">
-          내 용
+          <label htmlFor="content">내용</label>
           <textarea
+            id='content'
             ref={contentInput}
             name="content"
             value={state.content}
             onChange={handleChangeState} />
         </div>
       </div>
-      <div>
-        <button onClick={handleSubmit}>응원글 저장하기
-        </button>
-      </div>
+      <button onClick={handleSubmit}>응원글 저장하기
+      </button>
     </div>
 
   )

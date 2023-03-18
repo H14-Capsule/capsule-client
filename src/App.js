@@ -44,9 +44,7 @@ function App() {
       author,
       content,
       created_date,
-
     }
-
 
     setData([newItem, ...data])
   }
