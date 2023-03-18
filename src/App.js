@@ -35,7 +35,7 @@ import CheeringMessageList from './pages/CheeringMessageList'
 function App() {
 
   const [data, setData] = useState([])
-  const dataId = useRef(0)
+
 
   const onCreate = (author, content) => {
     //author,content,emotion를 파라미터로 받아온다.
@@ -44,9 +44,9 @@ function App() {
       author,
       content,
       created_date,
-      id: dataId.current
+
     }
-    dataId.current += 1
+
 
     setData([newItem, ...data])
   }
@@ -58,10 +58,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           {/* 경로가 /일때 element는 Home이다 라는 의미 */}
-          <Route path='/LetterEditor' element={<LetterEditor onCreate={onCreate} />} />
+          <Route path='/LetterEditor' element={<LetterEditor />} />
           <Route path='/CheeringMessage' element={
             <>
-              <CheeringMessage />
+              <CheeringMessage onCreate={onCreate} />
               <CheeringMessageList messageList={data} />
             </>} />
           <Route path='/Certification' element={<Certification />} />
