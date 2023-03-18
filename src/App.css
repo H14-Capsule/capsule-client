@@ -35,10 +35,9 @@ body{
 
 .Letter{
   background-image: url(./background2.png);
-  width: 630px;
-  height: 750px;
+  width: 100%;
+  height: 100%;
   background-size: 100% 100%;
-  /* padding-left: 100px; */
   margin: 30px auto 30px auto
 }
 
@@ -46,7 +45,7 @@ body{
 .LetterText{
   width: 430px;
   height: 500px;
-  margin: 150px 100px;
+  margin: 150px 80px;
   border: 1px solid #ccc;
   background-color: transparent;
   font-size: 25px;
@@ -139,30 +138,33 @@ header button{
 
 /* Certification */
 .Certification{
-  text-align: center;
+  /* text-align: center; */
   margin: 160px;
 }
 
 .Certification_button{
   margin: 15px;
   display: flex;
-}
 
-.visible {
-  display: block;
-}
-
-.hidden {
-  display: none;
 }
 
 .Certification_button button{
   width: 90px;
   margin-left: 8px;
+  border : 1px solid gray;
+
 }
 
 .Certification_button input{
-  width: 180px;
+  border : 1px solid gray;
+
+}
+
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
 }
 
 /* CheeringMessage */
@@ -174,12 +176,12 @@ header button{
 }
 
 .CheeringMessageDiv{
-  padding : 50px;
+  padding : 50px 50px 20px 50px;
 }
 
 .CheeringMessageDiv input, textarea {
   width : 100%;
-  padding:20px;
+  padding:15px;
   border : 1px solid gray;
   border-radius: 5px;
   resize: none;

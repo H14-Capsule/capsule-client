@@ -24,10 +24,13 @@ const Certification = () => {
           </Link>}
       />
       <div className="Certification">
+        <div>
+          해당 이메일은 편지를 받을 이메일입니다.
+        </div>
         <div className="Certification_button">
           <input
             value={text} onChange={(e) => { setText(e.target.value) }}
-            placeholder="메일받을 이메일을 적어주세요." />
+            placeholder="이메일을 적어주세요." />
           <button className={isVisible ? "visible" : "hidden"} onClick={toggleVisibility}> 인증번호 전송
           </button>
 
