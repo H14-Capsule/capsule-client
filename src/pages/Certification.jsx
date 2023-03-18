@@ -9,9 +9,11 @@ const Certification = () => {
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
+    localStorage.setItem('email', text);
   };
   const [text, setText] = useState("")
   const [number, setNumber] = useState("")
+
 
 
   return (
@@ -22,7 +24,14 @@ const Certification = () => {
           <Link to="/CheeringMessage">
             <MyButton text={'응원글 쓰러 가기'} onClick={() => { }} />
           </Link>}
-      />
+          
+        leftChild={
+          <Link to="/LetterEditor">
+            <MyButton 
+            className={isVisible ? "visible" : "hidden"}text={'편지 수정 하기'} onClick={() => { }} />
+          </Link>}
+
+        />
       <div className="Certification">
         <div>
           해당 이메일은 편지를 받을 이메일입니다.

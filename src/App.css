@@ -33,6 +33,7 @@ body{
   padding-right: 20px;
 }
 
+/* LetterEditor */
 .Letter{
   background-image: url(./background2.png);
   width: 100%;
@@ -40,7 +41,6 @@ body{
   background-size: 100% 100%;
   margin: 30px auto 30px auto
 }
-
 
 .LetterText{
   width: 430px;
@@ -55,6 +55,11 @@ body{
   outline: none;
   border-color: black;
   box-shadow: 0 0 5px gainsboro;
+}
+
+.LetterEditorStorage{
+  font-size: 20px;
+  /* background-color: green; */
 }
 
 /* MyButton */

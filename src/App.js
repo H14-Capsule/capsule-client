@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import './App.css';
 import LetterEditor from './pages/LetterEditor';
@@ -32,7 +32,15 @@ import CheeringMessageList from './pages/CheeringMessageList'
 //   }
 // ]
 
+
 function App() {
+
+  useEffect(() => {
+    const item1 = localStorage.getItem('item1')
+    const item2 = localStorage.getItem('item2')
+    const item3 = JSON.parse(localStorage.getItem('item3'))
+    console.log({ item1, item2, item3 })
+  }, [])
 
   const [data, setData] = useState([])
 
