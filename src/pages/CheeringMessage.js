@@ -50,8 +50,10 @@ const CheeringMessage = ({ onCreate }) => {
       />
       <div className="CheeringMessageDiv">
         <div className="CheeringMessageAuthor">
-          <label htmlFor="author">작성자</label>
+          <label
+            htmlFor="author">작성자</label>
           <input
+            placeholder="응원하는 공간이니 사칭은 삼가하여 주세요."
             id='author'
             ref={authorInput}
             name="author"
@@ -61,6 +63,7 @@ const CheeringMessage = ({ onCreate }) => {
         <div className="CheeringMessageContent">
           <label htmlFor="content">내용</label>
           <textarea
+            placeholder="힘나는 응원글을 짧게라도 적어주세요."
             id='content'
             ref={contentInput}
             name="content"

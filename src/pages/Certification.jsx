@@ -2,19 +2,33 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
+import Timer from "../components/Timer";
+import React from 'react';
+import Countdown from 'react-countdown';
+import TimerButton from "../components/TimerButton";
 
 const Certification = () => {
 
   const [isVisible, setIsVisible] = useState(true)
+  const [timerActive, setTimerActive] = useState(false);
+  const [text, setText] = useState("")
+  const [number, setNumber] = useState("")
+  const [isTimeOver, setIsTimeOver] = useState(false);
+
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
     localStorage.setItem('email', text);
+    setTimerActive(true);
+
   };
-  const [text, setText] = useState("")
-  const [number, setNumber] = useState("")
 
 
+  const handleClick = () => {
+
+    alert("안녕")
+    isTimeOver(true)
+  }
 
   return (
     <>
@@ -45,13 +59,20 @@ const Certification = () => {
 
           <button className={isVisible ? "hidden" : "visible"}>재 전 송</button>
         </div>
-
+          
         <div className="Certification_button">
           <div className={isVisible ? "hidden" : "visible"}>
+            <div>
+              
+            </div>
+            {timerActive && <Timer initialTime={180} />}
             <input
               value={number} onChange={(e) => { setNumber(e.target.value) }}
               placeholder="인증번호를 적어주세요." />
-            <button>인증 완료</button>
+            <button 
+            disabled={isTimeOver} 
+            onClick={handleClick}>인증 완료</button>
+            <TimerButton/>
           </div>
         </div>
       </div>

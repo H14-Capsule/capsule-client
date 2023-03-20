@@ -36,7 +36,7 @@ const LetterEditor = () => {
   return (
     <>
       <MyHeader
-        headText={"항해을 끝 맞췄을 나에게 편지 쓰기"}
+        headText={"항해가 끝난 나에게 쓰는 편지"}
         leftChild={
           <Link to="/">
             <MyButton text={'뒤로가기'} onClick={() => { }} />
