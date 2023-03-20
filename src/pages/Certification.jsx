@@ -5,7 +5,7 @@ import MyHeader from '../components/MyHeader';
 import Timer from "../components/Timer";
 import React from 'react';
 import Countdown from 'react-countdown';
-import TimerButton from "../components/TimerButton";
+
 
 const Certification = () => {
 
@@ -65,14 +65,14 @@ const Certification = () => {
             <div>
               
             </div>
-            {timerActive && <Timer initialTime={180} />}
+            {timerActive && <Timer initialTime={10} />}
             <input
               value={number} onChange={(e) => { setNumber(e.target.value) }}
               placeholder="인증번호를 적어주세요." />
             <button 
             disabled={isTimeOver} 
             onClick={handleClick}>인증 완료</button>
-            <TimerButton/>
+
           </div>
         </div>
       </div>
