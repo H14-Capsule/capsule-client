@@ -46,7 +46,7 @@ function App() {
 
 
   const onCreate = (author, content) => {
-    //author,content,emotion를 파라미터로 받아온다.
+    //author,content 을 파라미터로 받아온다.
     const created_date = new Date().getTime();
     const newItem = {
       author,

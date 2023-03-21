@@ -64,14 +64,13 @@ const Certification = () => {
             <div>
               
             </div>
-            {timerActive && <Timer initialTime={10} />}
+            {timerActive && <Timer initialTime={10} setIsTimeOver={setIsTimeOver}/>}
             <input
               value={number} onChange={(e) => { setNumber(e.target.value) }}
               placeholder="인증번호를 적어주세요." />
             <button 
             disabled={isTimeOver} 
             onClick={handleClick}>인증 완료</button>
-
           </div>
         </div>
       </div>

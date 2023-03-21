@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Certification from '../pages/Certification';
 
-const Timer = ({ initialTime }) => {
+const Timer = ({ initialTime, setIsTimeOver }) => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
-  const [isTimeOver, setIsTimeOver] = useState(false);
+
 
 
   const tick = () => {
