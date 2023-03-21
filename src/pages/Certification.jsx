@@ -20,14 +20,13 @@ const Certification = () => {
     setIsVisible(!isVisible);
     localStorage.setItem('email', text);
     setTimerActive(true);
-
   };
 
 
   const handleClick = () => {
 
     alert("안녕")
-    isTimeOver(true)
+    isTimeOver(false)
   }
 
   return (
