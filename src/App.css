@@ -174,7 +174,7 @@ header button{
 
 /* CheeringMessage */
 .CheeringMessage{
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid #c1c0c0;
   /* text-align: center; */
   padding:20px;
   font-size: 20px;
@@ -231,4 +231,22 @@ label {
   font-family: "Nanum Pen Script";
 }
 
-
+/* CheeringMessageList */
+.CheeringMessageList{
+  padding: 20px;
+  margin-top: 10px;
+}
+.CheeringMessageList h2{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.list{
+  background-color: rgba(250, 214, 226, 0.173);
+  margin-bottom: 10px;
+  padding: 20px;
+  font-size: 20px;
+}
+.listAuthor{
+  border-bottom: 1px solid #c1c0c0
+}

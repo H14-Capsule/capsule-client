@@ -33,6 +33,13 @@ const LetterEditor = () => {
     localStorage.setItem('letter', text);
   };
 
+  const handleChange = (e) => {
+    const { value } = e.target;
+    if (value.length <= 300) {
+      setText(value)
+    }
+  }
+
   return (
     <>
       <MyHeader
@@ -54,9 +61,7 @@ const LetterEditor = () => {
         </div>
         <div>
           <div className="Letter">
-            <textarea value={text} onChange={(e) => {
-              setText(e.target.value)
-            }} className="LetterText" />
+            <textarea value={text} onChange={handleChange} className="LetterText" />
           </div>
         </div>
       </div>

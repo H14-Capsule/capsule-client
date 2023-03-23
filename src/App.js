@@ -6,31 +6,20 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import CheeringMessage from './pages/CheeringMessage';
 import Certification from './pages/Certification';
-import CheeringMessageList from './pages/CheeringMessageList'
+import CheeringMessageList from './pages/CheeringMessageList.js'
 
 
-// const dummData = [
-//   {
-//     id: 1,
-//     content: "방명록 1",
-//     date: 1679011111523
-//   },
-//   {
-//     id: 2,
-//     content: "방명록 2",
-//     date: 1679011111524
-//   },
-//   {
-//     id: 3,
-//     content: "방명록 3",
-//     date: 1679011111525
-//   },
-//   {
-//     id: 4,
-//     content: "방명록 4",
-//     date: 1679011111526
-//   }
-// ]
+const dummyData = [
+  {
+    author: "항해99",
+    content: "지치지않게 화이팅!",
+  },
+  {
+    author: "유리최",
+    content: "건강챙기면서 화이팅!",
+  },
+
+]
 
 
 function App() {
@@ -51,7 +40,7 @@ function App() {
     const newItem = {
       author,
       content,
-      created_date,
+
     }
 
     setData([newItem, ...data])
@@ -68,7 +57,7 @@ function App() {
           <Route path='/CheeringMessage' element={
             <>
               <CheeringMessage onCreate={onCreate} />
-              <CheeringMessageList messageList={data} />
+              <CheeringMessageList dummyData={dummyData} />
             </>} />
           <Route path='/Certification' element={<Certification />} />
         </Routes>
