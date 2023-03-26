@@ -193,13 +193,13 @@ header button{
 }
 
 
-.CheeringMessageAuthor,
+.CheeringMessagenickname,
 .CheeringMessageContent {
   display: flex;
   align-items: center;
 }
 
-.CheeringMessageAuthor {
+.CheeringMessagenickname {
   margin-bottom: 30px;
 }
 
