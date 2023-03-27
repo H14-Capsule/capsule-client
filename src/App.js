@@ -6,14 +6,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import CheeringMessage from './pages/CheeringMessage';
 import Certification from './pages/Certification';
-import CheeringMessageList from './pages/CheeringMessageList.js'
+import CheeringMessageList from './pages/CheeringMessageList'
+import Finish from './pages/Finish'
+
 
 
 
 function App() {
-
-
-
+  const [confirmation, setConfirmation] = useState(false)
 
   return (
 
@@ -28,7 +28,12 @@ function App() {
               <CheeringMessage />
               <CheeringMessageList />
             </>} />
-          <Route path='/Certification' element={<Certification />} />
+          <Route path="/Certification" element={<Certification setConfirmation={setConfirmation} />} />
+          <Route path='/Finish' element={<Finish />} />
+          {confirmation
+            ? <Route path='/Finish' element={<Finish />} />
+            : <Route path='/Certification' element={<Certification setConfirmation={setConfirmation} />} />
+          }
         </Routes>
       </div>
     </BrowserRouter>

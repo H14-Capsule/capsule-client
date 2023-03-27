@@ -7,18 +7,20 @@ import React from 'react';
 
 
 
-const Certification = () => {
+const Certification = ({setConfirmation}) => {
 
   const textInput = useRef()
 
   const [isVisible, setIsVisible] = useState(true)
   const [timerActive, setTimerActive] = useState(false);
   const [text, setText] = useState("")
-  const [number, setNumber] = useState("")
+  const [authkey, setAuthkey] = useState("")
   const [isTimeOver, setIsTimeOver] = useState(false);
   const [timerKey, setTimerKey] = useState(0);
   const [id,setId] = useState(null)
   const [startTime, setStartTime] = useState(null);
+
+
 
   useEffect(() => {
     // 타이머 시작 시간을 기록
@@ -90,19 +92,52 @@ const Certification = () => {
 
   const handleClick = () => {
 
-    alert("안녕")
-    isTimeOver(false)
+    fetch(`https://hanghae-capsule-backend.fly.dev/api/v1/author/authorize`, {
+    method: 'put',
+    headers: {
+      'Content-Type': 'application/json',
+      //json형식으로 보내겠다는 의미
+    },
+    body: JSON.stringify({
+      id:id,
+      authKey:authkey
+    })
+  })
+  .then((response) => {
+    // 성공적으로 응답을 받았을 때 실행할 코드
+    console.log('인증완료')
+    const letter = localStorage.getItem('letter')
+
+    fetch(`https://hanghae-capsule-backend.fly.dev/api/v1/letter`, {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        //json형식으로 보내겠다는 의미
+      },
+      body: JSON.stringify({
+        authorId:id,
+        content:letter
+      })
+    })
+    .then((response) => {
+      // 성공적으로 응답을 받았을 때 실행할 코드
+      console.log('저장완료')
+    })
+    .catch(error => {
+      console.log('이메일 발송 실패')
+    })
+    setConfirmation(true)
+  })
+  .catch(error => {
+    console.log('이메일 발송 실패')
+  });
+    setIsTimeOver(false)
   }
 
   return (
     <>
       <MyHeader
         headText={"이메일 인증"}
-        // rightChild={
-        //   <Link to="/CheeringMessage">
-        //     <MyButton text={'응원글 쓰러 가기'} onClick={() => { }} />
-        //   </Link>}
-          
         leftChild={
           <Link to="/LetterEditor">
             <MyButton text={'편지 수정 하기'} onClick={() => { }} />
@@ -134,7 +169,7 @@ const Certification = () => {
             {timerActive && <Timer key={timerKey} 
             initialTime={180} setIsTimeOver={setIsTimeOver}/>}
             <input
-              value={number} onChange={(e) => { setNumber(e.target.value) }}
+              value={authkey} onChange={(e) => { setAuthkey(e.target.value) }}
               placeholder="인증번호를 적어주세요." />
             <button 
             disabled={isTimeOver} 
@@ -142,9 +177,7 @@ const Certification = () => {
           </div>
         </div>
       </div>
-      <div>
-        인증이 완료되었습니다. 해당 편지는 7월 7일에 인증받은 이메일로 발송됩니다. <br/>앞으로 남은 항해기간 응원 합니다. 화이팅! 
-      </div>
+
     </>)
 }
 
