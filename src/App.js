@@ -16,7 +16,6 @@ function App() {
   const [confirmation, setConfirmation] = useState(false)
 
   return (
-
     <BrowserRouter>
       <div className="App">
         <Routes>
@@ -28,12 +27,12 @@ function App() {
               <CheeringMessage />
               <CheeringMessageList />
             </>} />
-          <Route path="/Certification" element={<Certification setConfirmation={setConfirmation} />} />
-          <Route path='/Finish' element={<Finish />} />
+
           {confirmation
-            ? <Route path='/Finish' element={<Finish />} />
+            ? <Route path='/Certification' element={<Finish />} />
             : <Route path='/Certification' element={<Certification setConfirmation={setConfirmation} />} />
           }
+
         </Routes>
       </div>
     </BrowserRouter>
