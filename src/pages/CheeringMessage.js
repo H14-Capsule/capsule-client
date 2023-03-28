@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
 
-const CheeringMessage = () => {
+const CheeringMessage = ({ setCheeringMessages }) => {
 
   const nicknameInput = useRef()
   const contentInput = useRef()
@@ -46,9 +46,10 @@ const CheeringMessage = () => {
         content: state.content
       })
     })
-      .then(response => {
-        // 성공적으로 응답을 받았을 때 실행할 코드
-        console.log('저장성공')
+      .then((response) => response.json()).then((data) => {
+        setCheeringMessages((prevState) => {
+          return [...prevState, { ...data }]
+        })
       })
       .catch(error => {
         console.log('응원글 전송 실패')

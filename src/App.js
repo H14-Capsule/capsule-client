@@ -8,6 +8,7 @@ import CheeringMessage from './pages/CheeringMessage';
 import Certification from './pages/Certification';
 import CheeringMessageList from './pages/CheeringMessageList'
 import Finish from './pages/Finish'
+import CheeringMessagePage from './pages/CheeringMessagePage';
 
 
 
@@ -24,8 +25,7 @@ function App() {
           <Route path='/LetterEditor' element={<LetterEditor />} />
           <Route path='/CheeringMessage' element={
             <>
-              <CheeringMessage />
-              <CheeringMessageList />
+              <CheeringMessagePage />
             </>} />
 
           {confirmation
