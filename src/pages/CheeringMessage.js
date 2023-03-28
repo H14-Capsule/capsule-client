@@ -33,10 +33,7 @@ const CheeringMessage = () => {
 
     alert("저장성공!")
 
-    setState({
-      nickname: "",
-      content: ""
-    })
+
     fetch('https://hanghae-capsule-backend.fly.dev/api/v1/cheering-message', {
       method: 'POST',
       headers: {
@@ -45,19 +42,23 @@ const CheeringMessage = () => {
       },
       body: JSON.stringify({
         //실제 정보
-        "nickname": state.nickname,
-        "content": state.content
+        nickname: state.nickname,
+        content: state.content
       })
     })
       .then(response => {
         // 성공적으로 응답을 받았을 때 실행할 코드
-        console.log(response.json())
+        console.log('저장성공')
       })
       .catch(error => {
         console.log('응원글 전송 실패')
       });
-
-    window.location.reload()
+    setState({
+      nickname: "",
+      content: ""
+    })
+    // window.location.reload()
+    console.log(state)
 
   }
 

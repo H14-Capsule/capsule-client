@@ -250,3 +250,13 @@ label {
 .listAuthor{
   border-bottom: 1px solid #c1c0c0
 }
+
+/* Finish */
+.Finish{
+  text-align: center;
+  margin-top: 200px;
+  font-size: 30px;
+}
+.Finish > p{
+  margin-bottom: 60px;
+}
