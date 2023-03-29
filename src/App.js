@@ -14,7 +14,7 @@ import CheeringMessagePage from './pages/CheeringMessagePage';
 
 
 function App() {
-  const [confirmation, setConfirmation] = useState(false)
+
 
   return (
     <BrowserRouter>
@@ -27,12 +27,8 @@ function App() {
             <>
               <CheeringMessagePage />
             </>} />
-
-          {confirmation
-            ? <Route path='/Certification' element={<Finish />} />
-            : <Route path='/Certification' element={<Certification setConfirmation={setConfirmation} />} />
-          }
-
+          <Route path='/Finish' element={<Finish />} />
+          <Route path='/Certification' element={<Certification />} />
         </Routes>
       </div>
     </BrowserRouter>

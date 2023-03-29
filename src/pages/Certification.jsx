@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MyButton from '../components/MyButton';
 import MyHeader from '../components/MyHeader';
 import Timer from "../components/Timer";
@@ -7,8 +7,9 @@ import React from 'react';
 
 
 
-const Certification = ({setConfirmation}) => {
+const Certification = () => {
 
+  const navigator = useNavigate();
   const textInput = useRef()
 
   const [isVisible, setIsVisible] = useState(true)
@@ -122,11 +123,12 @@ const Certification = ({setConfirmation}) => {
     .then((response) => {
       // 성공적으로 응답을 받았을 때 실행할 코드
       console.log('저장완료')
+
     })
     .catch(error => {
       console.log('이메일 발송 실패')
     })
-    setConfirmation(true)
+    navigator('/Finish')
   })
   .catch(error => {
     console.log('이메일 발송 실패')

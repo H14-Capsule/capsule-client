@@ -111,6 +111,7 @@ header button{
 }
 
 .Home{
+  padding-top: 100px;
   text-align: center;
   font-size: 60px;
 }
@@ -118,6 +119,13 @@ header button{
 .Home div{
   font-size: 40px;
   margin: 80px;
+}
+
+.creator{
+
+  font-size: 15px;
+  justify-content: flex-end;
+  align-items: flex-start;
 }
 
 .button{
