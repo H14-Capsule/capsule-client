@@ -111,9 +111,11 @@ header button{
 }
 
 .Home{
+  height: 100%;
   padding-top: 100px;
   text-align: center;
   font-size: 60px;
+
 }
 
 .Home div{

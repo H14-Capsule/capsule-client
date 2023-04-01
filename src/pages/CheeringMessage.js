@@ -5,6 +5,8 @@ import MyHeader from '../components/MyHeader';
 
 const CheeringMessage = ({ setCheeringMessages }) => {
 
+  
+
   const nicknameInput = useRef()
   const contentInput = useRef()
 
