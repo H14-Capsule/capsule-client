@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import './App.css';
 import LetterEditor from './pages/LetterEditor';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, Switch, Routes } from 'react-router-dom'
 import Home from './pages/Home';
 import CheeringMessage from './pages/CheeringMessage';
 import Certification from './pages/Certification';
@@ -17,21 +17,21 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="App">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           {/* 경로가 /일때 element는 Home이다 라는 의미 */}
-          <Route path='/LetterEditor' element={<LetterEditor />} />
-          <Route path='/CheeringMessage' element={
+          <Route exact path='/LetterEditor' element={<LetterEditor />} />
+          <Route exact path='/CheeringMessage' element={
             <>
               <CheeringMessagePage />
             </>} />
-          <Route path='/Finish' element={<Finish />} />
-          <Route path='/Certification' element={<Certification />} />
+          <Route exact path='/Finish' element={<Finish />} />
+          <Route exact path='/Certification' element={<Certification />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 

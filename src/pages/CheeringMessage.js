@@ -5,7 +5,7 @@ import MyHeader from '../components/MyHeader';
 
 const CheeringMessage = ({ setCheeringMessages }) => {
 
-  
+
 
   const nicknameInput = useRef()
   const contentInput = useRef()
@@ -50,7 +50,7 @@ const CheeringMessage = ({ setCheeringMessages }) => {
     })
       .then((response) => response.json()).then((data) => {
         setCheeringMessages((prevState) => {
-          return [...prevState, { ...data }]
+          return [{ ...data }, ...prevState]
         })
       })
       .catch(error => {
