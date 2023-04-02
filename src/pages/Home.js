@@ -16,7 +16,7 @@ const Home = () => {
           <button className="button">go</button>
         </Link>
       </div>
-      <span className="creator">클라이언트 제작자 : 최유리  / 서버 제작자 : 김경록 / 자문 : 고규식  / 아이디어 제공 : 이도영</span>
+      <span className="creator">클라이언트 제작자 : 최유리  / 서버 제작자 : 김경록 / 자문 : 고규식  / 아이디어 제공 : 이도영 / 들러리 : 김은서,신희제</span>
     </div >)
 }
 
