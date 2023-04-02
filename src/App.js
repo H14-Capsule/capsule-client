@@ -1,12 +1,9 @@
-import { useEffect, useState } from 'react';
 
 import './App.css';
 import LetterEditor from './pages/LetterEditor';
-import { BrowserRouter, HashRouter, Route, Switch, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home';
-import CheeringMessage from './pages/CheeringMessage';
 import Certification from './pages/Certification';
-import CheeringMessageList from './pages/CheeringMessageList'
 import Finish from './pages/Finish'
 import CheeringMessagePage from './pages/CheeringMessagePage';
 
