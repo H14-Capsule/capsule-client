@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const Timer = ({ initialTime, setIsTimeOver }) => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
 
 
 
-  const tick = () => {
+  const tick = useCallback(() => {
     setTimeLeft((timeLeft) => {
       if (timeLeft - 1 <= 0) {
         setIsTimeOver(true);
@@ -14,7 +14,7 @@ const Timer = ({ initialTime, setIsTimeOver }) => {
         return timeLeft - 1;
       }
     });
-  };
+  }, [setTimeLeft, setIsTimeOver]);
 
   useEffect(() => {
     const timerId = setInterval(() => {
