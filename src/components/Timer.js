@@ -21,7 +21,7 @@ const Timer = ({ initialTime, setIsTimeOver }) => {
       tick();
     }, 1000);
     return () => clearInterval(timerId);
-  }, []);
+  }, [tick]);
 
   const minutes = Math.floor(timeLeft / 60);
   const seconds = timeLeft % 60;
